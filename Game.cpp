@@ -1,6 +1,7 @@
 #include "Book/Game.hpp"
 #include "Book/StringHelpers.hpp"
 #include <iostream>
+#include "CircleShape.hpp"
 
 
 const float Game::PlayerSpeed = 100.f;
@@ -22,12 +23,10 @@ Game::Game()
 	mWindow.setVerticalSyncEnabled(true);
 	std::cout << "Created the Window." << std::endl;
 
-
-
-}
-
+};
 void Game::run()
 {
+
 	sf::Clock clock;
 	sf::Time timeSinceLastUpdate = sf::Time::Zero;
 	while (mWindow.isOpen())
@@ -91,33 +90,12 @@ void Game::update(sf::Time elapsedTime)
 
 void Game::render()
 {
-		sf::Text text;
-	sf::Font font;
-
-	if (!font.loadFromFile("Sansation.ttf"))
-	{
-		std::cout << "Program Halted." << std::endl;
-		std::exit(-1);
-	}
-
-	std::cout << "Loaded Fonts." << std::endl;
-	text.setFont(font);
-	text.setString("I am a Test");
-	text.setCharacterSize(20);
-
-	mPlayer.setColor(sf::Color::Blue);
-	
-
-	mPlayer.setPosition(100.f, 100.f);
-	
-	mStatisticsText.setFont(mFont);
-	mStatisticsText.setPosition(5.f, 5.f);
-	mStatisticsText.setCharacterSize(10);
+	mPlayer.setRadius(50.f);
+	mPlayer.setOutlineColor(sf::Color::Red);
+	mPlayer.setFillColor(sf::Color::Green);
 	mWindow.clear();	
 	mWindow.draw(mPlayer);
 	mWindow.draw(mStatisticsText);
-	mWindow.clear();
-	mWindow.draw(text);
 	mWindow.display();
 }
 

@@ -23,6 +23,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CircleShape.hpp" />
     <ClInclude Include="Game.hpp" />
     <ClInclude Include="stringhelpers.hpp" />
   </ItemGroup>

@@ -35,6 +35,9 @@
     <ClInclude Include="Game.hpp">
       <Filter>Source Files\Book</Filter>
     </ClInclude>
+    <ClInclude Include="CircleShape.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="StringHelpers.inl">

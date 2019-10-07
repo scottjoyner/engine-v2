@@ -1,5 +1,6 @@
 #include "Book/Game.hpp"
 #include "Book/StringHelpers.hpp"
+#include <iostream>
 
 
 const float Game::PlayerSpeed = 100.f;
@@ -18,18 +19,11 @@ Game::Game()
 , mIsMovingRight(false)
 , mIsMovingLeft(false)
 {
-	if (!mTexture.loadFromFile("Media/shroom.png"))
-	{
-		// Handle loading error
-	}
+	mWindow.setVerticalSyncEnabled(true);
+	std::cout << "Created the Window." << std::endl;
 
-	mPlayer.setTexture(mTexture);
-	mPlayer.setPosition(100.f, 100.f);
-	
-	mFont.loadFromFile("Media/stocky.ttf");
-	mStatisticsText.setFont(mFont);
-	mStatisticsText.setPosition(5.f, 5.f);
-	mStatisticsText.setCharacterSize(10);
+
+
 }
 
 void Game::run()
@@ -58,6 +52,12 @@ void Game::processEvents()
 	sf::Event event;
 	while (mWindow.pollEvent(event))
 	{
+		// get the global mouse position (relative to the desktop)
+		sf::Vector2i globalPosition = sf::Mouse::getPosition();
+
+		// get the local mouse position (relative to a window)
+		sf::Vector2i localPosition = sf::Mouse::getPosition(mWindow);
+
 		switch (event.type)
 		{
 			case sf::Event::KeyPressed:
@@ -67,7 +67,6 @@ void Game::processEvents()
 			case sf::Event::KeyReleased:
 				handlePlayerInput(event.key.code, false);
 				break;
-
 			case sf::Event::Closed:
 				mWindow.close();
 				break;
@@ -92,9 +91,33 @@ void Game::update(sf::Time elapsedTime)
 
 void Game::render()
 {
+		sf::Text text;
+	sf::Font font;
+
+	if (!font.loadFromFile("Sansation.ttf"))
+	{
+		std::cout << "Program Halted." << std::endl;
+		std::exit(-1);
+	}
+
+	std::cout << "Loaded Fonts." << std::endl;
+	text.setFont(font);
+	text.setString("I am a Test");
+	text.setCharacterSize(20);
+
+	mPlayer.setColor(sf::Color::Blue);
+	
+
+	mPlayer.setPosition(100.f, 100.f);
+	
+	mStatisticsText.setFont(mFont);
+	mStatisticsText.setPosition(5.f, 5.f);
+	mStatisticsText.setCharacterSize(10);
 	mWindow.clear();	
 	mWindow.draw(mPlayer);
 	mWindow.draw(mStatisticsText);
+	mWindow.clear();
+	mWindow.draw(text);
 	mWindow.display();
 }
 

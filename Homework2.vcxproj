@@ -23,6 +23,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CircleShape.hpp" />
     <ClInclude Include="Game.hpp" />
     <ClInclude Include="stringhelpers.hpp" />
   </ItemGroup>
@@ -30,7 +31,8 @@
     <None Include="StringHelpers.inl" />
   </ItemGroup>
   <ItemGroup>
-    <Font Include="..\Homework2\Media\stocky.ttf" />
+    <Font Include="..\Homework2\Media\arial.ttf" />
+    <Font Include="..\SFML-Game-Development-Book\01_Intro\Media\Sansation.ttf" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\Homework2\Media\shroom.png" />

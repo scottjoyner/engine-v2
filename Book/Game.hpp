@@ -1,6 +1,6 @@
 #ifndef BOOK_GAME_HPP
 #define BOOK_GAME_HPP
-
+#include "CircleShape.hpp"
 #include <SFML/Graphics.hpp>
 
 
@@ -26,7 +26,7 @@ class Game : private sf::NonCopyable
 
 		sf::RenderWindow		mWindow;
 		sf::Texture				mTexture;
-		sf::Sprite				mPlayer;
+		sf::CircleShape			mPlayer;
 		sf::Font				mFont;
 		sf::Text				mStatisticsText;
 		sf::Time				mStatisticsUpdateTime;

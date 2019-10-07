@@ -35,6 +35,9 @@
     <ClInclude Include="Game.hpp">
       <Filter>Source Files\Book</Filter>
     </ClInclude>
+    <ClInclude Include="CircleShape.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="StringHelpers.inl">
@@ -42,13 +45,16 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Font Include="..\Homework2\Media\stocky.ttf">
-      <Filter>Source Files\Media</Filter>
+    <Font Include="..\Homework2\Media\arial.ttf">
+      <Filter>Source Files</Filter>
+    </Font>
+    <Font Include="..\SFML-Game-Development-Book\01_Intro\Media\Sansation.ttf">
+      <Filter>Source Files</Filter>
     </Font>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\Homework2\Media\shroom.png">
-      <Filter>Source Files\Media</Filter>
+      <Filter>Source Files</Filter>
     </Image>
   </ItemGroup>
 </Project>
